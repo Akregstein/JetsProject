@@ -1,6 +1,6 @@
-StarDestroyer,Hodor,15050,10000,50000.6
-Transporter,HufflePuff,2005,20000,600.3
-StarDestroyer,Zippy,3005,30000,70000.6
+StarDestroyer,Hodor,15050,100007,50000.6
+Transporter,HufflePuff,2005,20000,63400.3
+StarDestroyer,Zippy,30052,300009,70000.6
 Transporter,Slowpoke,1000,15000,8000000.4
-StarDestroyer,KingKahuna,50050,60000,200000.2
-PassengerJet,RollyPolly,50876,60000,2000.3
+StarDestroyer,KingKahuna,50050,620000,2500000.2
+PassengerJet,RollyPolly,50876,60000,20900.3

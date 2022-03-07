@@ -5,9 +5,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Airfield {
+	Scanner kb = new Scanner(System.in);
 
+	StarDestroyer star = new StarDestroyer();
+	Transporter  trans = new Transporter();
+	
 	private List<Jet> fleet;
 
 	public Airfield() {
@@ -25,19 +30,102 @@ public class Airfield {
 
 	public void flyPlanes() {
 		for (Jet jet : fleet) {
+			System.out.println(jet.toString());
 			jet.fly();
 		}
 
 	}
+
 	public void fastestJet() {
 		Jet zoom = fleet.get(0);
 		for (Jet jet : fleet) {
-			if(jet.getSpeed() > zoom.getSpeed()) {
+			if (jet.getSpeed() > zoom.getSpeed()) {
 				zoom = jet;
 			}
 		}
+
 		System.out.println("The fastest Spacecraft is: " + zoom);
 	}
+
+	public void longestRange() {
+		Jet zoom = fleet.get(0);
+		for (Jet jet : fleet) {
+			if (jet.getRange() > zoom.getRange()) {
+				zoom = jet;
+			}
+		}
+		System.out.println("The Spacecraft with the longest range is: " + zoom);
+	}
+	
+	public void callInterface1() {
+		for (Jet jet : fleet) {
+			if (jet instanceof Transporter) {
+				System.out.println(" The Spacecraft: " + jet.getModel()+ " is initiating loading"); 
+				System.out.println();
+				trans.movesColonies();
+				System.out.println();
+				
+			}
+		}
+	}
+	public void callInterface2() {
+		for (Jet jet : fleet) {
+			if (jet instanceof StarDestroyer) {
+				System.out.println(" The Spacecraft: " + jet.getModel()+ " is about to froggy!"); 
+				System.out.println();
+				star.makesThingsDead();
+				System.out.println();
+			}
+		}
+	}
+	
+	public void addSpaceCraft() {
+		try {
+		System.out.println("Please enter a new Spacecraft: ");
+		String model = kb.next();
+		
+		//kb.next();
+		
+		System.out.println("Please enter the speed(in MPH): ");
+		int speed = kb.nextInt();
+		
+		System.out.println("Please enter the range: ");
+		int range = kb.nextInt();
+		
+		System.out.println("Please enter the price: ");
+		double price = kb.nextDouble();
+		
+		StarDestroyer userCraft = new StarDestroyer(model, speed, range, price);
+		fleet.add(userCraft);
+		}
+		catch(Exception e) {
+			System.out.println("Invalid entry! \n Murderous Leperchauns will find you in your sleep if you dont try again with a valid entry!");
+	
+		
+		
+	}
+	}
+			
+public void removeSpaceCraft() {
+	System.out.println("**********************************");
+	System.out.println("*** Please choose a Spacecraft to be removed ***");
+	int counter = 1;
+	for (Jet jet : fleet) {
+		System.out.println(counter + " " + jet.getModel());
+		counter++;
+		
+		}
+	int number = kb.nextInt();
+	fleet.remove(number -1);
+	
+		System.out.println("Your selected Spacecraft has been removed from the fleet.");		
+}	
+			
+			
+		
+	
+	
+	
 	
 	
 

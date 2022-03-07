@@ -20,7 +20,7 @@ public class StarDestroyer extends Jet implements ViolenceInitiator {
 	}
 
 	public void makesThingsDead() {
-		System.out.println("I blow things up and make them go \"BOOM\"");
+		System.out.println("Aim, Shoot, Fire \"KABOOM!\"");
 
 	}
 }

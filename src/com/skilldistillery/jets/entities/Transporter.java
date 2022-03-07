@@ -21,6 +21,6 @@ public class Transporter extends Jet implements PeopleMover {
 	}
 
 	public void movesColonies() {
-		System.out.println();
+		System.out.println("A civilization starter colony has been loaded");
 	}
 }
